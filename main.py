@@ -28,7 +28,8 @@ for i in range(numFiles):
     drawFunctions.append(drawToScreen)
 
 def main():
-    timerMax = 100
+    # Every 100 is a second
+    timerMax = 300
     timer = 0
     programNumber = -1
     while (True):
@@ -49,7 +50,6 @@ def main():
         
 
         timer = (timer + 1) % timerMax
-        print(timer)
         time.sleep(.01)
 
 if __name__ == "__main__":
