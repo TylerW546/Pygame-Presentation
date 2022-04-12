@@ -4,10 +4,8 @@ from pygame.locals import *
 import random
 import time
 
-from program0 import drawToScreen
-
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 800
+SCREEN_WIDTH_REAL = 1000
+SCREEN_HEIGHT_REAL = 800
 SCALE = 1
 
 white = (255, 255, 255)
@@ -17,7 +15,7 @@ green = (0,255,0)
 blue = (0,0,255)
 
 pygame.init()
-screen = pygame.display.set_mode((SCREEN_WIDTH * SCALE,SCREEN_HEIGHT * SCALE))
+screen = pygame.display.set_mode((SCREEN_WIDTH_REAL * SCALE,SCREEN_HEIGHT_REAL * SCALE))
 
 numFiles = 3
 
@@ -31,7 +29,7 @@ def main():
     # Every 100 is a second
     timerMax = 300
     timer = 0
-    programNumber = -1
+    programNumber = 1
     while (True):
         for event in pygame.event.get():
             if event.type == QUIT:
@@ -44,7 +42,7 @@ def main():
 
         screen.fill(black)
 
-        drawFunctions[programNumber](screen)
+        timerMax = drawFunctions[programNumber](screen)
 
         pygame.display.update()
         
